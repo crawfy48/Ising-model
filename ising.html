@@ -1,32 +1,30 @@
 <head>
 <meta charset="UTF-8">
-<title>Model Isinga</title>
+<title>Ising model</title>
 <link rel="stylesheet" href="ising.css">
 </head>
 
 <body>
 <div id="model">
-	<p>Nie jest to klasyczny model Isinga, bo używa
-	<a href="http://pl.wikipedia.org/wiki/S%C4%85siedztwo_(automaty_kom%C3%B3rkowe)" target="_blank">
-	sąsiedztwa Moore'a, a nie von Neumanna</a>. Użyty został klasyczny algorytm
-	Metropolisa, gdzie domena jest odwracana zawsze, gdy
-	&Delta;<i>E</i>&lt;0, a w przeciwnym wypadku z prawdopodobieństwem
-	<img src="metropolis.gif">. Do &Delta;<i>E</i> można dodać dodatkowy
-	człon F, odpowiedzialny za tarcie. Użyłem 
-	<a href="http://rileyjshaw.com/terra/" target="_blank">terra.js</a>.
-	<a href="ising.js" target="_blank">Kod symulacji</a>.</p>
+	<p>This is not a classic Ising model, because it uses
+	<a href="http://en.wikipedia.org/wiki/Moore_neighborhood" target="_blank">
+	Moore's neighbourhood</a> instead of von Neumann's. It uses Metropolis criterion, where a magnetic
+	domain is always flipped when &Delta;<i>E</i>&lt;0, otherwise with probability
+	<img src="metropolis.gif">. Additional parameter F, responsible for friction,
+	can be added to &Delta;<i>E</i>. I used <a href="http://rileyjshaw.com/terra/" target="_blank">terra.js</a>.
+	Here is the <a href="ising.js" target="_blank">simulation code</a>.</p>
 	<div id="placeholder"></div>
 	<script src="terra.min.js"></script>
 	<script src="ising.js"></script>
-	<div id="parametry">
-		<p>Namagnesowanie M=<span id="printM"></span></p>
-		<p>Temperatura T=<span id="printT"></span></p>
-		<p>Pole B=<span id="printB"></span></p>
-		<p>Tarcie F=<span id="printF"></span></p>
+	<div id="parameters">
+		<p>Magnetization M=<span id="printM"></span></p>
+		<p>Temperature T=<span id="printT"></span></p>
+		<p>External field H=<span id="printH"></span></p>
+		<p>Friction F=<span id="printF"></span></p>
 		<form>
-		Temperatura:<input type="number" id="T" value="0.1"><br/>
-		Pole:<input type="number" id="B" value="0.0"><br/>
-		Tarcie:<input type="number" id="F" value="0.0">
+		Temperature:<input type="number" id="T" value="0.1"><br/>
+		External field:<input type="number" id="H" value="0.0"><br/>
+		Friction:<input type="number" id="F" value="0.0">
 		</form>
 	</div>
 </div>

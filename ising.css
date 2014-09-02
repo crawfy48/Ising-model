@@ -1,0 +1,20 @@
+
+div#model
+{
+	position: relative;
+	width: 800px;
+}
+
+div#parametry
+{
+	text-align: right;
+	position: absolute;
+	left: 525px;
+	bottom: 0px;
+}
+
+
+div#placeholder
+{
+	width: 500px;
+}

@@ -12,5 +12,5 @@ The simulation is running in real time, and certain parameters can be adjusted:
 
 ising.html, ising.css and metropolis.gif constitute the webpage, on which the script is placed. terra.min.js is the terra library downloaded from http://rileyjshaw.com/terra/, and the ising.js is the script itself (the most important file).
 
-Installation is simple: copy all the files to one folder and open index.html.
-A working version is hosted here: http://students.mimuw.edu.pl/~lm320319/ising.html
+Installation is simple: copy all the files to one folder and open ising.html. The content of the gh-pages branch can be viewed online at adress: http://crawfy48.github.io/Ising-model/ising.html
+Polish version is hosted here: http://students.mimuw.edu.pl/~lm320319/ising.html

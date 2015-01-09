@@ -7,14 +7,22 @@ div#model
 
 div#parameters
 {
-	text-align: right;
+	text-align: left;
 	position: absolute;
 	left: 525px;
 	bottom: 0px;
 }
 
+span.value
+{
+	text-align: right;
+}
 
 div#placeholder
 {
 	width: 500px;
+}
+form#input
+{
+	text-align: right;
 }

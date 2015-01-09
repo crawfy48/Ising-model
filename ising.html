@@ -1,4 +1,6 @@
+<html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <title>Ising model</title>
 <link rel="stylesheet" href="ising.css">
@@ -6,26 +8,43 @@
 
 <body>
 <div id="model">
-	<p>This is not a classic Ising model, because it uses
-	<a href="http://en.wikipedia.org/wiki/Moore_neighborhood" target="_blank">
-	Moore's neighbourhood</a> instead of von Neumann's. It uses Metropolis criterion, where a magnetic
-	domain is always flipped when &Delta;<i>E</i>&lt;0, otherwise with probability
-	<img src="metropolis.gif">. Additional parameter F, responsible for friction,
-	can be added to &Delta;<i>E</i>. I used <a href="http://rileyjshaw.com/terra/" target="_blank">terra.js</a>.
+	<p>This is a 2D Ising model simulation. It uses Metropolis criterion, where a magnetic
+	domain is always flipped when Δ<i>E</i>&lt;0, otherwise with probability
+	<img src="metropolis.gif">. Domain oriented "up" is orange, "down" is white.
+	Domains are selected one by one, each with probability (1-"randomness").
+	Metropolis criterion is applied only to selected domains, so that randomness=0 applies metropolis criterion
+	to every domain, which may result in artificial, oscillation-like behaviour.
+	Randomness close to one slows down the algorithm.
+	Additional parameter Fr, responsible for friction,
+	can be added to Δ<i>E</i>. Coupling constant J describes interaction between domains.
+	Buttons on the bottom can be used to control simulation speed or reset it.
+	I used <a href="http://rileyjshaw.com/terra/" target="_blank">terra.js</a>.
 	Here is the <a href="ising.js" target="_blank">simulation code</a>.</p>
+	<p> Author: Łukasz Mioduszewski</p>
 	<div id="placeholder"></div>
-	<script src="terra.min.js"></script>
+	<div>
+	<script src="mainfile.js"></script>
 	<script src="ising.js"></script>
+	</div>
 	<div id="parameters">
-		<p>Magnetization M=<span id="printM"></span></p>
-		<p>Temperature T=<span id="printT"></span></p>
-		<p>External field H=<span id="printH"></span></p>
-		<p>Friction F=<span id="printF"></span></p>
-		<form>
-		Temperature:<input type="number" id="T" value="0.1"><br/>
-		External field:<input type="number" id="H" value="0.0"><br/>
-		Friction:<input type="number" id="F" value="0.0">
+		<p>Magnetization per domain m=<span class="value" id="printm">0</span></p>
+		<p>Total magnetization M=<span class="value" id="printM">0</span></p>
+		<p>Coupling J=<span class="value" id="printJ">0.1</span></p>
+		<p>Temperature T=<span class="value" id="printT">0.1</span></p>
+		<p>External field h=<span class="value" id="printH">0</span></p>
+		<p>Friction Fr=<span class="value" id="printF">0</span></p>
+		<form id="input">
+		Randomness:<input id="R" value="0.9" step="0.1" type="number"><br>
+		Coupling:<input id="J" value="1.0" step="0.1" type="number"><br>
+		Temperature:<input id="T" value="0.2" step="0.1" type="number"><br>
+		External field:<input id="H" value="0.0" step="0.1" type="number"><br>
+		Friction:<input id="F" value="0.0" step="0.1" type="number">
 		</form>
 	</div>
 </div>
+<button onclick="stop()">Stop</button> 
+<button onclick="play()">Play</button> 
+<button onclick="next()">Next Frame</button> 
+<button onclick="reset()">Reset</button> 
 </body>
+</html>
